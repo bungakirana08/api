@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Postman API Guide</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">⚡ API Docs</div>
+            <div class="nav-links">
+                <a href="#get">GET</a>
+                <a href="#post">POST</a>
+                <a href="#put">PUT</a>
+                <a href="#delete">DELETE</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <h1>🚀 REST API Documentation</h1>
+        <p>Panduan lengkap CRUD Operations dengan Postman - GET, POST, PUT, DELETE</p>
+    </div>
+
+    <div class="container">
+        <div class="api-config">
+            <h2>🔐 Konfigurasi API</h2>
+            <div class="config-grid">
+                <div class="config-item">
+                    <label>Base URL</label>
+                    <code>http://103.186.167.18:8000/serverapikel1rpl2/key/index.php</code>
+                </div>
+                <div class="config-item">
+                    <label>Authentication</label>
+                    <code>X-API-KEY Header</code>
+                </div>
+                <div class="config-item">
+                    <label>API Key</label>
+                    <code>123456</code>
+                </div>
+            </div>
+        </div>
+
+        <!-- GET METHOD -->
+        <div class="method-section" id="get">
+            <div class="method-card get">
+                <div class="method-header">
+                    <div class="method-title">
+                        <span class="method-badge">GET</span>
+                        <h3>Read Data</h3>
+                    </div>
+                    <div class="method-icon">📥</div>
+                </div>
+                <div class="method-body">
+                    <div class="description">
+                        <h4>Apa itu HTTP GET?</h4>
+                        <p>Method untuk <strong>mengambil/membaca data</strong> dari server tanpa mengubah data.</p>
+                        <ul>
+                            <li>Tidak mengubah data di server</li>
+                            <li>Parameter dikirim via URL</li>
+                            <li>Tidak memerlukan request body</li>
+                        </ul>
+                    </div>
+
+                    <div class="endpoint-box">
+                        <div class="endpoint-label">📍 Endpoints</div>
+                        <div class="endpoint-url">GET /kelas - Semua data</div>
+                        <div class="endpoint-url">GET /kelas/{id} - Data spesifik</div>
+                    </div>
+
+                    <div class="steps">
+                        <h4>🔧 Langkah-langkah:</h4>
+                        <div class="step-item">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <p>Pilih method <strong>GET</strong> dan masukkan URL</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <p>Tab Headers: tambahkan <strong>X-API-KEY: 123456</strong></p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <p>Klik <strong>Send</strong></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="screenshot-container">
+                        <div class="screenshot-label">📸 Screenshot GET Request</div>
+                        <img src="img/get.jpg" alt="GET Request">
+                    </div>
+
+                    <div class="response-box">
+                        <div class="response-title">✅ Response (200 OK)</div>
+                        <div class="code-snippet"><pre>[
+  {<span class="json-key">"id"</span>: <span class="json-number">54</span>, <span class="json-key">"nama_kelas"</span>: <span class="json-string">"ANIM 1"</span>, <span class="json-key">"tingkat"</span>: <span class="json-string">"X"</span>},
+  {<span class="json-key">"id"</span>: <span class="json-number">55</span>, <span class="json-key">"nama_kelas"</span>: <span class="json-string">"ANIM 2"</span>, <span class="json-key">"tingkat"</span>: <span class="json-string">"X"</span>}
+]</pre></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- POST METHOD -->
+        <div class="method-section" id="post">
+            <div class="method-card post">
+                <div class="method-header">
+                    <div class="method-title">
+                        <span class="method-badge">POST</span>
+                        <h3>Create Data</h3>
+                    </div>
+                    <div class="method-icon">📤</div>
+                </div>
+                <div class="method-body">
+                    <div class="description">
+                        <h4>Apa itu HTTP POST?</h4>
+                        <p>Method untuk <strong>mengirim data ke server dan membuat resource baru</strong>.</p>
+                        <ul>
+                            <li>Data dikirim dalam request body</li>
+                            <li>Membuat data baru di database</li>
+                            <li>Response berisi ID data baru</li>
+                        </ul>
+                    </div>
+
+                    <div class="endpoint-box">
+                        <div class="endpoint-label">📍 Endpoint</div>
+                        <div class="endpoint-url">POST /kelas</div>
+                    </div>
+
+                    <div class="steps">
+                        <h4>🔧 Langkah-langkah:</h4>
+                        <div class="step-item">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <p>Pilih method <strong>POST</strong> dan masukkan URL</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <p>Tab Headers: tambahkan <strong>X-API-KEY: 123456</strong></p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <p>Tab Body → pilih <strong>raw</strong> dan <strong>JSON</strong></p>
+                                <div class="code-snippet"><pre>{
+  <span class="json-key">"nama_kelas"</span>: <span class="json-string">"RPL 2"</span>,
+  <span class="json-key">"tingkat"</span>: <span class="json-string">"XI"</span>
+}</pre></div>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <p>Klik <strong>Send</strong></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="screenshot-container">
+                        <div class="screenshot-label">📸 Screenshot POST Request</div>
+                        <img src="img/post.jpg" alt="POST Request">
+                    </div>
+
+                    <div class="response-box">
+                        <div class="response-title">✅ Response (201 Created)</div>
+                        <div class="code-snippet"><pre>{
+  <span class="json-key">"id"</span>: <span class="json-number">67</span>,
+  <span class="json-key">"message"</span>: <span class="json-string">"Kelas berhasil dibuat"</span>
+}</pre></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PUT METHOD -->
+        <div class="method-section" id="put">
+            <div class="method-card put">
+                <div class="method-header">
+                    <div class="method-title">
+                        <span class="method-badge">PUT</span>
+                        <h3>Update Data</h3>
+                    </div>
+                    <div class="method-icon">✏️</div>
+                </div>
+                <div class="method-body">
+                    <div class="description">
+                        <h4>Apa itu HTTP PUT?</h4>
+                        <p>Method untuk <strong>mengupdate/memodifikasi data yang sudah ada</strong> di server.</p>
+                        <ul>
+                            <li>Memerlukan ID data yang akan diupdate</li>
+                            <li>Data baru dikirim dalam request body</li>
+                            <li>Mengganti data lama dengan data baru</li>
+                        </ul>
+                    </div>
+
+                    <div class="endpoint-box">
+                        <div class="endpoint-label">📍 Endpoint</div>
+                        <div class="endpoint-url">PUT /kelas/{id}</div>
+                    </div>
+
+                    <div class="steps">
+                        <h4>🔧 Langkah-langkah:</h4>
+                        <div class="step-item">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <p>Pilih method <strong>PUT</strong> dan masukkan URL dengan ID: <code>/kelas/67</code></p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <p>Tab Headers: tambahkan <strong>X-API-KEY: 123456</strong></p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <p>Tab Body → pilih <strong>raw</strong> dan <strong>JSON</strong></p>
+                                <div class="code-snippet"><pre>{
+  <span class="json-key">"nama_kelas"</span>: <span class="json-string">"RPL 2"</span>,
+  <span class="json-key">"tingkat"</span>: <span class="json-string">"XI"</span>
+}</pre></div>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <p>Klik <strong>Send</strong></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="screenshot-container">
+                        <div class="screenshot-label">📸 Screenshot PUT Request</div>
+                        <img src="img/put.jpg" alt="PUT Request">
+                    </div>
+
+                    <div class="response-box">
+                        <div class="response-title">✅ Response (200 OK)</div>
+                        <div class="code-snippet"><pre>{
+  <span class="json-key">"message"</span>: <span class="json-string">"Kelas berhasil diperbarui"</span>
+}</pre></div>
+                    </div>
+
+                    <div class="info-box">
+                        <strong>💡 Perbedaan POST vs PUT:</strong><br>
+                        POST = Membuat data baru (tanpa ID)<br>
+                        PUT = Mengupdate data lama (perlu ID di URL)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DELETE METHOD -->
+        <div class="method-section" id="delete">
+            <div class="method-card delete">
+                <div class="method-header">
+                    <div class="method-title">
+                        <span class="method-badge">DELETE</span>
+                        <h3>Delete Data</h3>
+                    </div>
+                    <div class="method-icon">🗑️</div>
+                </div>
+                <div class="method-body">
+                    <div class="description">
+                        <h4>Apa itu HTTP DELETE?</h4>
+                        <p>Method untuk <strong>menghapus data dari server secara permanen</strong>.</p>
+                        <ul>
+                            <li>Memerlukan ID data yang akan dihapus</li>
+                            <li>Tidak memerlukan request body</li>
+                            <li>Data yang dihapus tidak bisa dikembalikan</li>
+                        </ul>
+                    </div>
+
+                    <div class="endpoint-box">
+                        <div class="endpoint-label">📍 Endpoint</div>
+                        <div class="endpoint-url">DELETE /kelas/{id}</div>
+                    </div>
+
+                    <div class="steps">
+                        <h4>🔧 Langkah-langkah:</h4>
+                        <div class="step-item">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <p>Pilih method <strong>DELETE</strong> dan masukkan URL dengan ID: <code>/kelas/51</code></p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <p>Tab Headers: tambahkan <strong>X-API-KEY: 123456</strong></p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <p><strong>Tidak perlu Body!</strong> Langsung klik <strong>Send</strong></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="screenshot-container">
+                        <div class="screenshot-label">📸 Screenshot DELETE Request</div>
+                        <img src="img/delete.jpg" alt="DELETE Request">
+                    </div>
+
+                    <div class="response-box">
+                        <div class="response-title">✅ Response (200 OK)</div>
+                        <div class="code-snippet"><pre>{
+  <span class="json-key">"message"</span>: <span class="json-string">"Kelas berhasil dihapus"</span>
+}</pre></div>
+                    </div>
+
+                    <div class="warning-box">
+                        <strong>⚠️ Peringatan:</strong> Data yang dihapus tidak dapat dikembalikan! Pastikan ID sudah benar sebelum mengirim request.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- COMPARISON TABLE -->
+        <div class="comparison-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Method</th>
+                        <th>Fungsi</th>
+                        <th>Endpoint</th>
+                        <th>Body Required</th>
+                        <th>Response Code</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="method-tag tag-get">GET</span></td>
+                        <td>Mengambil data</td>
+                        <td>/kelas, /kelas/{id}</td>
+                        <td>❌ Tidak</td>
+                        <td>200 OK</td>
+                    </tr>
+                    <tr>
+                        <td><span class="method-tag tag-post">POST</span></td>
+                        <td>Membuat data baru</td>
+                        <td>/kelas</td>
+                        <td>✅ Ya (JSON)</td>
+                        <td>201 Created</td>
+                    </tr>
+                    <tr>
+                        <td><span class="method-tag tag-put">PUT</span></td>
+                        <td>Mengupdate data</td>
+                        <td>/kelas/{id}</td>
+                        <td>✅ Ya (JSON)</td>
+                        <td>200 OK</td>
+                    </tr>
+                    <tr>
+                        <td><span class="method-tag tag-delete">DELETE</span></td>
+                        <td>Menghapus data</td>
+                        <td>/kelas/{id}</td>
+                        <td>❌ Tidak</td>
+                        <td>200 OK</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="info-box">
+            <h3 style="color: #00d4ff; margin-bottom: 15px;">🎯 Best Practices</h3>
+            <ul style="margin-left: 20px; line-height: 2;">
+                <li>Selalu sertakan header <strong>X-API-KEY</strong> di setiap request</li>
+                <li>Gunakan format JSON yang valid untuk POST dan PUT</li>
+                <li>Perhatikan status code response (200, 201, 404, 500)</li>
+                <li>Save request dalam Collection untuk reusability</li>
+                <li>Test secara berurutan: GET → POST → GET → PUT → GET → DELETE</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>⚡ Modern API Documentation | By Bunga Kirana ❤️</p>
+    </div>
+</body>
+</html>
